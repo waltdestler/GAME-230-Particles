@@ -19,17 +19,17 @@ void render_frame();
 void create_particle();
 
 RenderWindow window;
-//Texture particleTex;
+Texture particleTex;
 
 vector<unique_ptr<Particle>> particles;
 
-const float PARTICLES_PER_SECOND = 1;
+const float PARTICLES_PER_SECOND = 200;
 float accumulatedParticles = 0;
 
 int main()
 {
 	window.create(VideoMode(1024, 768), "SFML Example");
-	//particleTex.loadFromFile("particle.png");
+	particleTex.loadFromFile("particle.png");
 
 	Clock clock;
 
@@ -94,21 +94,21 @@ void create_particle()
 	Vector2i mousePos = Mouse::getPosition(window);
 	p->center = Vector2f((float)mousePos.x, (float)mousePos.y);
 
-	//p->texture = &particleTex;
+	p->texture = &particleTex;
 
-	//p->velocity.x = (float)(rand() % 250 - 125);
-	//p->velocity.y = (float)(rand() % 250 - 125);
+	p->velocity.x = (float)(rand() % 250 - 125);
+	p->velocity.y = (float)(rand() % 250 - 125);
 
-	//p->acceleration.y = -750;
+	p->acceleration.y = -750;
 
-	//p->startSize = Vector2f(50, 50);
-	//p->endSize = Vector2f(200, 200);
+	p->startSize = Vector2f(50, 50);
+	p->endSize = Vector2f(200, 200);
 
-	//p->startColor = ColorF(1, 0, 0, 1);
-	//p->endColor = ColorF(1, 1, 0, 0);
+	p->startColor = ColorF(1, 0, 0, 1);
+	p->endColor = ColorF(1, 1, 0, 0);
 
-	//p->startRot = 0;
-	//p->endRot = rand() % 720 - 360;
+	p->startRot = 0;
+	p->endRot = rand() % 720 - 360;
 
 	particles.push_back(unique_ptr<Particle>(p));
 }
