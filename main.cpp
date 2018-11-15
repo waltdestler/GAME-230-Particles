@@ -87,7 +87,6 @@ void render_frame()
 
 void create_particle()
 {
-
 	Particle* p = new Particle();
 
 	Vector2i mousePos = Mouse::getPosition(window);
