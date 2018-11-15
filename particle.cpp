@@ -18,10 +18,12 @@ void Particle::draw(RenderWindow& window)
 	float t = life / lifetime;
 
 	RectangleShape shape;
-	shape.setSize(Vector2f(100, 100));
-	shape.setOrigin(50, 50);
 	shape.setPosition(center);
 	shape.setTexture(texture);
+
+	Vector2f size = lerp(startSize, endSize, t);
+	shape.setSize(size);
+	shape.setOrigin(size / 2.0f);
 
 	ColorF color = lerp(startColor, endColor, t);
 	shape.setFillColor(color);

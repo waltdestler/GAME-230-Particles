@@ -21,8 +21,10 @@ public:
 	Vector2f velocity;
 	Vector2f acceleration;
 	Texture* texture = nullptr;
-	ColorF startColor = ColorF(1, 1, 1, 1);
-	ColorF endColor = ColorF(1, 1, 1, 0);
+	ColorF startColor;
+	ColorF endColor;
+	Vector2f startSize;
+	Vector2f endSize;
 
 	void update(float dt);
 	bool isDead();
