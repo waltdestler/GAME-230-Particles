@@ -93,12 +93,12 @@ void create_particle()
 	Vector2i mousePos = Mouse::getPosition(window);
 	p->center = Vector2f((float)mousePos.x, (float)mousePos.y);
 
-	p->lifetime = 0.5f;
+	p->lifetime = 1.0f;
 
-	p->velocity.x = (float)(rand() % 500 - 250);
-	p->velocity.y = (float)(rand() % 500 - 250);
+	p->velocity.x = (float)(rand() % 250 - 125);
+	p->velocity.y = (float)(rand() % 250 - 125);
 
-	p->acceleration.y = -1500;
+	p->acceleration.y = -750;
 
 	p->startSize = Vector2f(50, 50);
 	p->endSize = Vector2f(200, 200);
