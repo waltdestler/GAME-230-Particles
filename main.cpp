@@ -107,7 +107,7 @@ void create_particle()
 	p->startColor = ColorF(1, 0, 0, 1);
 	p->endColor = ColorF(1, 1, 0, 0);
 
-	p->startRot = 0;
+	p->startRot = rand() % 720 - 360;
 	p->endRot = rand() % 720 - 360;
 
 	particles.push_back(unique_ptr<Particle>(p));
