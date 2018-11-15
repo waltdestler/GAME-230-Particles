@@ -89,10 +89,12 @@ void create_particle()
 {
 	Particle* p = new Particle();
 
+	p->lifetime = 0.75f;
+
 	Vector2i mousePos = Mouse::getPosition(window);
 	p->center = Vector2f((float)mousePos.x, (float)mousePos.y);
 
-	p->lifetime = 1.0f;
+	p->texture = &particleTex;
 
 	p->velocity.x = (float)(rand() % 250 - 125);
 	p->velocity.y = (float)(rand() % 250 - 125);
@@ -107,8 +109,6 @@ void create_particle()
 
 	p->startRot = 0;
 	p->endRot = rand() % 720 - 360;
-
-	p->texture = &particleTex;
 
 	particles.push_back(unique_ptr<Particle>(p));
 }

@@ -15,12 +15,14 @@ bool Particle::isDead()
 
 void Particle::draw(RenderWindow& window)
 {
-	float t = life / lifetime;
-
 	RectangleShape shape;
 	shape.setPosition(center);
+	//shape.setSize(Vector2f(50, 50));
+	//shape.setOrigin(25, 25);
+	
 	shape.setTexture(texture);
 
+	float t = life / lifetime;
 	Vector2f size = lerp(startSize, endSize, t);
 	shape.setSize(size);
 	shape.setOrigin(size / 2.0f);

@@ -18,9 +18,9 @@ public:
 	float life = 0;
 	float lifetime = 1;
 	Vector2f center;
+	Texture* texture = nullptr;
 	Vector2f velocity;
 	Vector2f acceleration;
-	Texture* texture = nullptr;
 	ColorF startColor = ColorF(1, 1, 1, 1);
 	ColorF endColor = ColorF(1, 1, 1, 1);
 	Vector2f startSize = Vector2f(50, 50);
