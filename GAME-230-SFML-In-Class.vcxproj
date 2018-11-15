@@ -157,7 +157,9 @@
     <ClCompile Include="particle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="colorf.h" />
     <ClInclude Include="particle.h" />
+    <ClInclude Include="tweens.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

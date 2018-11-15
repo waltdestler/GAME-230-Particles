@@ -92,15 +92,18 @@ void create_particle()
 
 	Particle* p = new Particle();
 
-	p->life = 1;
+	p->lifetime = 0.5f;
 	p->center = mousePosF;
 	p->texture = &particleTex;
 
 	// Random velocity.
-	p->velocity.x = (float)(rand() % 300 - 150);
-	p->velocity.y = (float)(rand() % 300 - 150);
+	p->velocity.x = (float)(rand() % 500 - 250);
+	p->velocity.y = (float)(rand() % 500 - 250);
 
-	p->acceleration.y = 300;
+	//p->acceleration.y = -1000;
+
+	p->startColor = ColorF(1, 0, 0, 1);
+	p->endColor = ColorF(1, 1, 0, 0);
 
 	particles.push_back(unique_ptr<Particle>(p));
 }
