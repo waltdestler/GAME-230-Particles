@@ -23,7 +23,7 @@ Texture particleTex;
 
 vector<unique_ptr<Particle>> particles;
 
-const float PARTICLES_PER_SECOND = 100;
+const float PARTICLES_PER_SECOND = 200;
 float accumulatedParticles = 0;
 
 int main()
@@ -87,14 +87,18 @@ void render_frame()
 
 void create_particle()
 {
-	Vector2i mousePosI = Mouse::getPosition(window);
-	Vector2f mousePosF = Vector2f((float)mousePosI.x, (float)mousePosI.y);
 
 	Particle* p = new Particle();
 
+	Vector2i mousePos = Mouse::getPosition(window);
+	p->center = Vector2f((float)mousePos.x, (float)mousePos.y);
+
 	p->lifetime = 0.5f;
-	p->center = mousePosF;
-	p->texture = &particleTex;
+
+	p->velocity.x = (float)(rand() % 500 - 250);
+	p->velocity.y = (float)(rand() % 500 - 250);
+
+	p->acceleration.y = -1500;
 
 	p->startSize = Vector2f(50, 50);
 	p->endSize = Vector2f(200, 200);
@@ -102,10 +106,10 @@ void create_particle()
 	p->startColor = ColorF(1, 0, 0, 1);
 	p->endColor = ColorF(1, 1, 0, 0);
 
-	p->velocity.x = (float)(rand() % 500 - 250);
-	p->velocity.y = (float)(rand() % 500 - 250);
+	p->startRot = 0;
+	p->endRot = rand() % 720 - 360;
 
-	p->acceleration.y = -1500;
+	p->texture = &particleTex;
 
 	particles.push_back(unique_ptr<Particle>(p));
 }

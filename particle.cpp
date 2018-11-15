@@ -28,5 +28,8 @@ void Particle::draw(RenderWindow& window)
 	ColorF color = lerp(startColor, endColor, t);
 	shape.setFillColor(color);
 
+	float rot = lerp(startRot, endRot, t);
+	shape.setRotation(rot);
+
 	window.draw(shape);
 }
