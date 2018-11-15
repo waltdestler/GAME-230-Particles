@@ -23,12 +23,13 @@ void Particle::draw(RenderWindow& window)
 	//shape.setTexture(texture);
 
 	//float t = life / lifetime;
-	//Vector2f size = lerp(startSize, endSize, t);
-	//shape.setSize(size);
-	//shape.setOrigin(size / 2.0f);
 
 	//ColorF color = lerp(startColor, endColor, t);
 	//shape.setFillColor(color);
+
+	//Vector2f size = lerp(startSize, endSize, t);
+	//shape.setSize(size);
+	//shape.setOrigin(size / 2.0f);
 
 	//float rot = lerp(startRot, endRot, t);
 	//shape.setRotation(rot);

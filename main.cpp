@@ -101,11 +101,11 @@ void create_particle()
 
 	//p->acceleration.y = -750;
 
-	//p->startSize = Vector2f(50, 50);
-	//p->endSize = Vector2f(200, 200);
-
 	//p->startColor = ColorF(1, 0, 0, 1);
 	//p->endColor = ColorF(1, 1, 0, 0);
+
+	//p->startSize = Vector2f(50, 50);
+	//p->endSize = Vector2f(200, 200);
 
 	//p->startRot = rand() % 720 - 360;
 	//p->endRot = rand() % 720 - 360;
