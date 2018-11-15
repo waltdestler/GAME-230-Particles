@@ -79,7 +79,7 @@ void render_frame()
 {
 	window.clear();
 
-	for (int i = particles.size() - 1; i >= 0; --i)
+	for (int i = 0; i < particles.size(); ++i)
 	{
 		particles[i]->draw(window);
 	}
